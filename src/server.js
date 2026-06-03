@@ -3,12 +3,14 @@ const express = require("express");
 const cors = require("cors");
 const Anthropic = require("@anthropic-ai/sdk");
 
+console.log("ANTHROPIC_API_KEY definida:", !!process.env.ANTHROPIC_API_KEY);
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-const client = new Anthropic();
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 const SYSTEM_PROMPT = `Eres una desarrolladora de negocios de ATFX, un broker de CFD multiregulado. Hablas en primera persona, con un tono profesional pero cercano, como si chatearas por redes sociales. Tu objetivo es prospectar traders, academias de trading y influencers financieros para que operen con ATFX.
 
