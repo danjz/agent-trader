@@ -53,9 +53,9 @@
 </div>
 
 <script>
-const API_BASE = window.location.hostname === 'agent-trader-production-7244.up.railway.app'
-  ? ''
-  : 'https://agent-trader-production-7244.up.railway.app';
+const API_BASE = window.location.protocol === 'file:'
+  ? 'https://agent-trader-production-1d9d0.up.railway.app'
+  : '';
 
 let platform = 'Instagram';
 let history = [];
