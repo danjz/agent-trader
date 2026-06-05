@@ -4,6 +4,7 @@ const cors = require("cors");
 const Anthropic = require("@anthropic-ai/sdk");
 
 console.log("ANTHROPIC_API_KEY definida:", !!process.env.ANTHROPIC_API_KEY);
+console.log("Iniciando servidor...");
 
 const app = express();
 app.use(cors());
